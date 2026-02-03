@@ -25,7 +25,7 @@ int main()
         1.0,0.0,0.0
     };
     GLuint program = make_shader("../src/shaders/vertexShader.txt","../src/shaders/fragmentShader.txt");
-    
+
     std::vector <GLuint> VBOs;
     VBOs.resize(2);
 
@@ -57,9 +57,8 @@ int main()
         glfwPollEvents();
         glUseProgram(program);
         glBindVertexArray(VAO);
-        glPointSize(100.0f);
+        //glPointSize(100.0f);
         glDrawArrays(GL_POINTS, 0,1);
-      
         glfwSwapBuffers(window);
     }
 

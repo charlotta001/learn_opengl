@@ -4,6 +4,7 @@ project(hello_window VERSION 1.0.0)
 
 add_executable(hello_window 
 src/config.h  
+src/function.cpp
 src/main.cpp 
 src/glad.c)
 

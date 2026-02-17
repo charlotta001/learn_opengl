@@ -32,6 +32,7 @@ GLuint make_module(const std::string &shaderPath,int shaderModule){
 
         if(!shaderFile.is_open()){
             std::cerr<<"cant open file" << std::endl;
+            return 0;
     }
     
         while(getline(shaderFile, shaderString1)){

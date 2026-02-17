@@ -1,8 +1,30 @@
 #version 330 core
-in vec3 outColor;
-out vec4 FragColor; 
+//in vec3 outColor;
+//in vec2 TexCoord;
+out vec4 FragColor;
 
+
+uniform sampler2D ourTexture;
 
 void main() {
-    FragColor = vec4(outColor, 1.0);    
+
+
+    //FragColor = vec4(outColor, 1.0); 
+    //FragColor = texture(ourTexture, TexCoord); 
+    
+    
+
+
+
+    //if(FragColor.a < 0.1){
+     //   discard;
+    //}
+
+    
+    float dist = length(gl_PointCoord - vec2(0.5));
+if(dist > 0.5) {
+    discard;  // Cut off corners = circle!
+}
+FragColor = texture(ourTexture, gl_PointCoord);
+    
 }
